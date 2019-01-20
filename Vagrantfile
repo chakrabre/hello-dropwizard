@@ -52,7 +52,7 @@ Vagrant.configure('2') do |config|
 	    docker.vm.provision :docker do |docker|
 	      docker.build_image '/vagrant/.', args: '-t hello-dropwizard’
 
-	      docker.run 'hello-dropwizard', args: '-it -p 8080:8080 -p 8081:8081 -e ENV_VARIABLE_VERSION=1.1.1'
+	      docker.run 'hello-dropwizard', args: '-it -p 8080:8080 -p 8081:8081 version=2.0.0'
 	    end
 	  end
 	  
